@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
+import Logo from '@/components/Logo';
 
 type Props = {
   onAccessGranted: () => void;
@@ -39,12 +40,9 @@ export default function AccessGate({ onAccessGranted }: Props) {
       <div className="absolute top-1/4 left-1/3 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
       <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-fixora-green-accent/10 blur-3xl" />
       <div className="relative w-full max-w-md rounded-3xl overflow-hidden backdrop-blur-2xl bg-white/15 border border-white/25 shadow-2xl p-8 sm:p-10">
-        <div className="flex items-center justify-center gap-3 mb-8">
-          <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white/25 backdrop-blur-md border border-white/30">
-            <span className="text-xl font-black text-white">S</span>
+          <div className="flex justify-center mb-8">
+            <Logo size="md" />
           </div>
-          <span className="text-xl font-bold text-white">SonarExtractor</span>
-        </div>
         <h1 className="text-2xl font-black text-white text-center mb-2">
           Code d&apos;accès
         </h1>

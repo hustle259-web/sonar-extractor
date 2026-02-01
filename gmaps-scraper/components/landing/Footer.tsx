@@ -1,3 +1,5 @@
+import Logo from '@/components/Logo';
+
 export default function Footer() {
   return (
     <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-white/40">
@@ -6,10 +8,9 @@ export default function Footer() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-1">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center bg-fixora-purple/90 border border-white/20 shadow-lg">
-                  <span className="text-xl font-black text-white">S</span>
+                <div className="bg-fixora-purple/90 rounded-lg px-3 py-1.5 flex items-center border border-white/20">
+                  <Logo size="sm" />
                 </div>
-                <span className="text-xl font-bold text-gray-900">SonarExtractor</span>
               </div>
               <p className="text-gray-500 text-sm mb-4">
                 Extrayez des leads B2B depuis Google Maps.

@@ -2,6 +2,7 @@
 
 import { Suspense, useState } from 'react';
 import Link from 'next/link';
+import Logo from '@/components/Logo';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 function LoginForm() {
@@ -41,11 +42,8 @@ function LoginForm() {
   return (
     <div className="min-h-screen bg-fixora-hero flex items-center justify-center px-4">
       <div className="w-full max-w-md rounded-3xl overflow-hidden backdrop-blur-2xl bg-white/15 border border-white/25 shadow-2xl p-8">
-        <div className="flex items-center justify-center gap-3 mb-8">
-          <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white/25 backdrop-blur-md border border-white/30">
-            <span className="text-xl font-black text-white">S</span>
-          </div>
-          <span className="text-xl font-bold text-white">SonarExtractor</span>
+        <div className="flex justify-center mb-8">
+          <Logo size="md" />
         </div>
         <h1 className="text-2xl font-black text-white text-center mb-2">Connexion</h1>
         <p className="text-white/80 text-center mb-8">Accédez à votre compte</p>

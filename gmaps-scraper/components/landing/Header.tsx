@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Logo from '@/components/Logo';
 
 export default function Header() {
   const [user, setUser] = useState<{ email?: string } | null>(null);
@@ -26,10 +27,7 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center bg-white/15 backdrop-blur-md border border-white/20 shadow-lg">
-              <span className="text-xl font-black text-white">S</span>
-            </div>
-            <span className="text-xl font-bold text-white">SonarExtractor</span>
+            <Logo size="sm" />
           </Link>
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-white/85 hover:text-white font-medium transition">

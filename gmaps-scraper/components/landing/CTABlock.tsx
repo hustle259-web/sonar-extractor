@@ -1,3 +1,5 @@
+import Logo from '@/components/Logo';
+
 export default function CTABlock() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
@@ -5,6 +7,9 @@ export default function CTABlock() {
         <div className="relative rounded-3xl overflow-hidden backdrop-blur-2xl bg-fixora-purple/90 border border-white/20 shadow-2xl p-8 sm:p-12 flex flex-col sm:flex-row items-center justify-between gap-8">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_20%_50%,rgba(255,255,255,0.15),transparent)]" />
           <div className="relative">
+            <div className="mb-4">
+              <Logo size="sm" />
+            </div>
             <h2 className="text-2xl sm:text-3xl font-black text-white mb-3">
               Prêt à extraire des leads ?
             </h2>
