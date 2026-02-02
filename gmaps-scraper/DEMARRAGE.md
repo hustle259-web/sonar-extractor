@@ -56,5 +56,7 @@ Ouvre **http://localhost:3000**.
 
 - **`DATABASE_URL manquant`** : vérifie que `.env.local` est bien dans `gmaps-scraper/` et contient `DATABASE_URL`.
 - **`relation "users" does not exist`** : exécute `neon/schema.sql` dans Neon (étape 1).
+- **`column "unlimited_promo" does not exist`** : exécute `neon/migration-promo.sql` dans Neon Console > SQL Editor.
+- **Impossible de créer un compte** : ouvre la console (F12 > Network), regarde la réponse de `/api/auth/signup`, puis exécute le schéma ou la migration dans Neon.
 - **`GOOGLE_PLACES_API_KEY manquante`** : ajoute la clé dans `.env.local`.
 - **Erreur Stripe** : normal si Stripe n’est pas configuré ; l’auth et l’extraction (avec code promo) marchent sans.

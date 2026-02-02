@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-fixora-green-accent/10 blur-3xl" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-white/5 blur-3xl" />
       <div className="relative max-w-5xl mx-auto text-center">
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center -mb-2">
           <Logo size="xl" />
         </div>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight drop-shadow-lg">

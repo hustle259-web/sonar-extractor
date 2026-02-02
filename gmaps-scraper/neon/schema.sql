@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS promo_codes (
 );
 CREATE INDEX IF NOT EXISTS idx_promo_codes_code ON promo_codes(code);
 CREATE INDEX IF NOT EXISTS idx_promo_codes_active ON promo_codes(active);
-INSERT INTO promo_codes (code, active) VALUES ('67-02-35-03-45-01', true) ON CONFLICT (code) DO NOTHING;
+INSERT INTO promo_codes (code, active) VALUES ('67023503', true) ON CONFLICT (code) DO NOTHING;
 
 -- 6. Scrapes
 CREATE TABLE IF NOT EXISTS scrapes (

@@ -50,12 +50,6 @@ export default function Header() {
             {!loading && (
               user ? (
                 <>
-                  <Link
-                    href="/admin"
-                    className="px-4 py-2 rounded-xl text-sm font-medium text-white/90 hover:bg-white/10 transition"
-                  >
-                    Admin
-                  </Link>
                   <span className="text-white/80 text-sm truncate max-w-[120px] hidden md:inline">{user.email}</span>
                   <button
                     onClick={handleLogout}

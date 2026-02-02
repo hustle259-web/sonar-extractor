@@ -50,8 +50,13 @@ export async function POST(request: NextRequest) {
     const msg = e instanceof Error ? e.message : String(e);
     console.error('Signup error:', e);
     const isDev = process.env.NODE_ENV === 'development';
+    // Détecter les erreurs de schéma DB courantes
+    const isSchemaError = /unlimited_promo|relation "users"|relation "sessions"/i.test(msg);
+    const hint = isSchemaError
+      ? ' Exécute neon/schema.sql (ou migration-promo.sql) dans Neon Console > SQL Editor.'
+      : '';
     return NextResponse.json(
-      { error: isDev ? `Erreur: ${msg}` : 'Erreur lors de l\'inscription' },
+      { error: isDev ? `Erreur: ${msg}${hint}` : `Erreur lors de l'inscription.${hint}` },
       { status: 500 }
     );
   }
