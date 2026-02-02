@@ -4,6 +4,12 @@ import { getUserByEmail } from '@/lib/db';
 
 export async function POST(request: NextRequest) {
   try {
+    if (!process.env.DATABASE_URL) {
+      return NextResponse.json(
+        { error: 'DATABASE_URL manquant. Vérifie gmaps-scraper/.env.local et relance le serveur.' },
+        { status: 500 }
+      );
+    }
     const body = await request.json().catch(() => ({}));
     const email = typeof body.email === 'string' ? body.email.trim().toLowerCase() : '';
     const password = typeof body.password === 'string' ? body.password : '';
@@ -34,7 +40,16 @@ export async function POST(request: NextRequest) {
     });
     return res;
   } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e);
     console.error('Login error:', e);
-    return NextResponse.json({ error: 'Erreur lors de la connexion' }, { status: 500 });
+    const isDev = process.env.NODE_ENV === 'development';
+    const isSchemaError = /unlimited_promo|relation "users"|relation "sessions"/i.test(msg);
+    const hint = isSchemaError
+      ? ' Exécute neon/schema.sql (ou migration-promo.sql) dans Neon Console > SQL Editor.'
+      : '';
+    return NextResponse.json(
+      { error: isDev ? `Erreur: ${msg}${hint}` : `Erreur lors de la connexion.${hint}` },
+      { status: 500 }
+    );
   }
 }
